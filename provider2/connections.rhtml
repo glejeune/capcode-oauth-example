@@ -1,0 +1,12 @@
+<h2>My Connections</h2>
+
+<% if !@consumers.empty? %>
+	<% @consumers.each do |consumer| %>
+		<div style="background-color: #eef; padding: 20px; margin-bottom: 10px;">
+			<b><%= consumer.name %></b>
+			[<a href="/connection/delete/<%= consumer.shared_key %>">Delete</a>]
+		</div>
+	<% end %>
+<% else %>
+	You don't have any connections... yet.
+<% end %>

@@ -1,0 +1,3 @@
+adapter: sqlite3
+path: consumer.sqlite3
+host: localhost

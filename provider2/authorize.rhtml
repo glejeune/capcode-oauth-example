@@ -1,0 +1,16 @@
+<h2>You are about to authorize (<%= @user_request.consumer.name %>)</h2>
+<form action="/oauth/authorize" method="post">
+	<p>
+    <input id="oauth_token" name="oauth_token" type="hidden" value="<%= @user_request.shared_key %>" />
+		<input id="authorize" name="authorize" type="hidden", value="yes" />
+    <input name="commit" type="submit" value="Authorize" />
+  </p>
+</form>
+
+<form action="/oauth/authorize" method="post">
+	<p>
+    <input id="oauth_token" name="oauth_token" type="hidden" value="<%= @user_request.shared_key %>" />
+		<input id="authorize" name="authorize" type="hidden", value="no" />
+    <input name="commit" type="submit" value="My God! No!" />
+  </p>
+</form>

@@ -1,0 +1,41 @@
+<% if @message %>
+	<div style="background-color: #fee; padding: 20px; margin-bottom: 10px;">
+		<p><%= @message %></p>
+	</div>
+<% end %>
+
+<h2>Login</h2>
+
+<div class="app">
+  <form action="/login" method="POST">
+		<div>
+			Mail:
+			<input type="text" name="user_mail" id="user_mail" rows="20" />
+			<br />
+			Password:
+			<br/>
+			<input type="password" name="user_password" id="user_password" rows="20" />
+		</div>
+		<input type="submit" value="Login"/>
+  </form>
+</div>
+
+<h2>No account? Create one, free.</h2>
+
+<div class="app">
+  <form action="/login" method="POST">
+		<div>
+			Mail:
+			<input type="text" name="user_mail" id="user_mail" rows="20" />
+			<br />
+			Username:
+			<input type="text" name="user_name" id="user_name" rows="20" />
+			<br />
+			Password:
+			<br/>
+			<input type="password" name="user_password" id="user_password" rows="20" />
+		</div>
+		<input type="hidden", name="user_signup", value="1" />
+		<input type="submit" value="Sign up."/>
+  </form>
+</div>

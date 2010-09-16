@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>My Micro-blogging Site</title>
+  <style>
+    html {
+      background-color: #eee;
+			font-family: Arial, sans-serif;
+    }
+		h1 {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		input[type="text"],textarea
+		{
+			font-size:16px;
+			width: 100%;
+		}
+		input[type="submit"] {
+			margin-top: 20px;
+    	background-color: #efe;
+    	border: 1px solid #ccc;
+			padding: 10px;
+			font-weight: bold;
+			font-size: 16px;
+			cursor: pointer
+		}
+		#header {
+    	width: 600px;
+			margin: 100px auto;
+			margin-bottom: 0px;
+    	background-color: #ccc;
+    	border: 1px solid #ccc;
+    	padding: 20px;
+		}
+    #content {
+    	width: 600px;
+			margin: 0px auto;
+    	background-color: #fff;
+    	border: 1px solid #ccc;
+    	padding: 20px;
+    }
+		#navigation {
+    	width: 600px;
+			margin: 100px auto;
+			margin-top: 0px;
+    	background-color: #ccc;
+    	border: 1px solid #ccc;
+    	padding: 20px;
+		}
+		.message {
+			background-color: #eee;
+			margin: 10px;
+			padding: 10px;
+		}
+		h3.trigger a {
+			color: #ccc;
+			text-decoration: none;
+			display: block;
+		}
+		h3.trigger a:hover {
+			color: #000;
+		}
+		.toggle_container {
+			background-color: #ddd;
+			margin: 10px;
+			padding: 10px;
+		}
+  </style>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		
+		$(".toggle_container").hide();
+	
+		$("h3.trigger").click(function(){
+			$(this).toggleClass("active").next().slideToggle("slow");
+		});
+	
+	});
+	</script>
+</head>
+<body>
+	<div id="header">
+		<h1>My Micro-Blogging Site</h1>
+	</div>
+	<div id="content">
+
+		<%= yield %>
+
+	</div>
+	<div id="navigation">
+		<a href="/messages">Messages</a> | <a href="/oauth/applications">OAuth Apps</a> | <a href="/connections">Connections</a> | <a href="/login"><%= @login %></a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,4 @@
+adapter: sqlite3
+path: provider2.sqlite3
+host: localhost
+loglevel: info
